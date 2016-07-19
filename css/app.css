@@ -174,30 +174,44 @@ Header Section
     overflow: hidden;
 }
 
-.headerContainer {
+.headerContainerWrapper {
     position: static;
     top: 0;
     left: 0;
-    width: 100vw;
-    background-color: rgba(0, 0, 0, 0.0);
-    overflow: hidden;
+    width: 100%;
     z-index: 2000;
     -webkit-transition: top 500ms ease;
     -moz-transition: top 500ms ease;
     -o-transition: top 500ms ease;
-    -ms-transition: top 500ms ease;
     transition: top 500ms ease;
+    /* enable hardware acceleration to fix laggy transitions */
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
-.headerShadow {
+.headerContainerShadow {
+    background-color: rgba(0, 0, 0, 0.0);
+    border-bottom: 0px solid #eee;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.0);
     position: relative;
+    z-index: 999999;
+    /* to place the header above all elements */
 }
 
-.activeScroll .headerContainer {
+.scrollActive .headerContainerWrapper {
     position: fixed;
-    top: 0;
-    background-color: rgb(255, 255, 255);
+}
+
+.scrollActive .headerContainerShadow {
+    background: #FFF;
+    border-bottom: 2px solid #eee;
     box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 999999;
+    /* to place the header above all elements */
 }
 
 .caption-text {
