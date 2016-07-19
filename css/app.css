@@ -23,7 +23,7 @@ Custom Grid
 [class*="col-"] {
     float: left;
     padding: 15px;
-    border: 1px solid red;
+    border: 0px solid red;
 }
 
 @media only screen and (max-width: 480px) {
@@ -65,7 +65,7 @@ Custom Grid
         width: 100%;
     }
     [class*="col-m"] {
-        background: orange;
+        background: transparent;
     }
 }
 
@@ -108,7 +108,7 @@ Custom Grid
         width: 100%;
     }
     [class*="col-m"] {
-        background: blue;
+        background: transparent;
     }
 }
 
@@ -151,8 +151,12 @@ Custom Grid
         width: 100%;
     }
     [class*="col-"] {
-        border: 1px solid black;
+        border: 0px solid black;
     }
+}
+
+body {
+    overflow-x: hidden;
 }
 
 
@@ -167,6 +171,33 @@ Header Section
     background: url(../images/bg2.jpg);
     background-position: center;
     background-size: 100% auto;
+    overflow: hidden;
+}
+
+.headerContainer {
+    position: static;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.0);
+    overflow: hidden;
+    z-index: 2000;
+    -webkit-transition: top 500ms ease;
+    -moz-transition: top 500ms ease;
+    -o-transition: top 500ms ease;
+    -ms-transition: top 500ms ease;
+    transition: top 500ms ease;
+}
+
+.headerShadow {
+    position: relative;
+}
+
+.activeScroll .headerContainer {
+    position: fixed;
+    top: 0;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.5);
 }
 
 .caption-text {
@@ -199,4 +230,8 @@ Header Section
 #about {
     height: 100vh;
     line-height: 100vh;
+}
+
+#portfolio {
+    height: 100vh;
 }
