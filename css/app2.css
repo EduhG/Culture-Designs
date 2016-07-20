@@ -1,0 +1,233 @@
+body {
+    background: #fff;
+    color: #69606b;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.5;
+    font-family: 'Raleway', Arial, sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body,
+#container,
+#header {
+    height: 100%;
+}
+
+
+/*=========================================================================*/
+
+
+/* -------------------------------------------------------------------------
+Push
+------------------------------------------------------------------------- */
+
+.intro-effect-push:not(.notrans) #header,
+.intro-effect-push:not(.notrans) > .banner,
+.intro-effect-push:not(.notrans) #content > div {
+    -webkit-transition-property: opacity, -webkit-transform;
+    transition-property: opacity, transform;
+    -webkit-transition-duration: 1s;
+    transition-duration: 1s;
+}
+
+.intro-effect-push:not(.notrans) #header {
+    -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    -webkit-transition-duration: 1.2s;
+    transition-duration: 1.2s;
+}
+
+.intro-effect-push .codrops-demos a {
+    color: #108576;
+}
+
+.intro-effect-push #header {
+    position: absolute;
+    z-index: 1500;
+}
+
+.intro-effect-push > .banner {
+    position: relative;
+    top: auto;
+    left: auto;
+    padding: 6em 1em 2em;
+}
+
+.intro-effect-push #content > div {
+    margin-top: 50px;
+    color: #b2b2c0;
+}
+
+.intro-effect-push > .title,
+.intro-effect-push #content > div {
+    -webkit-transform: translateY(400px);
+    transform: translateY(400px);
+    opacity: 0;
+}
+
+.intro-effect-push.modify > .title,
+.intro-effect-push.modify #content > div {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.intro-effect-push.modify #header {
+    opacity: 0;
+    -webkit-transform: translateY(-100%) scale(0.9);
+    transform: translateY(-100%) scale(0.9);
+}
+
+
+/* Delays */
+
+.intro-effect-push.modify:not(.notrans) > .title {
+    -webkit-transition-delay: 0.5s;
+    transition-delay: 0.5s;
+}
+
+.intro-effect-push.modify:not(.notrans) #content > div {
+    -webkit-transition-delay: 0.6s;
+    transition-delay: 0.6s;
+}
+
+
+/* Media Queries */
+
+@media screen and (max-width: 47em) {
+    .title,
+    .content {
+        font-size: 70%;
+    }
+    .codrops-demos a {
+        font-size: 80%;
+    }
+    .intro-effect-side .title {
+        width: 100%;
+        padding: 0 1em;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    .intro-effect-side.modify .bg-img::before {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+    .intro-effect-side .bg-img::after {
+        border-left-width: 0px;
+        border-right-width: 0px;
+        right: 0px;
+        left: 0px;
+        background: rgba(255, 255, 255, 0.1);
+    }
+    .intro-effect-side.modify .bg-img::after {
+        background: rgba(255, 255, 255, 0.8);
+    }
+    .intro-effect-sidefixed .content {
+        width: 100%;
+        margin-left: auto;
+    }
+    .intro-effect-sidefixed .bg-img::after {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 27em) {
+    .intro-effect-jam3 .content {
+        padding: 0 2em 5em;
+    }
+    .intro-effect-grid .grid li h2 {
+        display: none;
+    }
+    .intro-effect-push .header .title {
+        top: 60px;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+    .title,
+    .content {
+        font-size: 50%;
+    }
+    button.trigger::before {
+        display: none;
+    }
+}
+
+
+/*=========================================================================*/
+
+
+/* Conent */
+
+.content {
+    margin: 0 auto;
+    padding: 0 0 3em;
+}
+
+.content > div:not(.title) {
+    margin: -80px auto 0;
+    max-width: 900px;
+    padding: 0 1.25em;
+}
+
+.content > div:not(.title) p {
+    margin: 0 auto 1.5em auto;
+}
+
+.content > div:not(.title) p:first-child {
+    font-size: 1.35em;
+}
+
+.content h3 {
+    margin: 0;
+    font-size: 1.4em;
+}
+
+.content blockquote {
+    padding: 0.25em;
+    font-style: italic;
+    font-size: 1.65em;
+    font-family: 'Lora', serif;
+    line-height: 1.4;
+}
+
+.content blockquote::before {
+    content: '\201C';
+}
+
+.content blockquote::after {
+    content: '\201D';
+}
+
+#container > .row {
+    height: 100vh;
+    max-width: 100%;
+}
+
+#header {
+    background: yellow
+}
+
+#about {
+    background: #fff
+}
+
+#members {
+    background: red
+}
+
+#contact {
+    background: blue
+}
